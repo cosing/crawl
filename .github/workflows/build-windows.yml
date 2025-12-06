@@ -1,0 +1,77 @@
+name: Manual MSYS2 Windows Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      tiles:
+        description: 'Build tiles (y/n). Use "y" to build tiles, otherwise console build.'
+        required: false
+        default: 'y'
+      jobs:
+        description: 'Number of parallel make jobs'
+        required: false
+        default: '4'
+
+jobs:
+  build-msys2:
+    name: Build with MSYS2 (MINGW64)
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+      with:
+        submodules: false
+
+    - name: Setup MSYS2 (MINGW64) and install required packages
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: MINGW64
+        update: true
+        install: >
+          base-devel
+          git
+          zip
+          mingw-w64-x86_64-nsis
+          mingw-w64-x86_64-toolchain
+          mingw-w64-x86_64-python-yaml
+          mingw-w64-x86_64-python-pip
+          mingw-w64-x86_64-advancecomp
+
+    - name: Ensure pip package pyyaml is installed (pip)
+      shell: msys2 {0}
+      run: |
+        # Use the MSYS2 mingw64 python/pip to install pyyaml as requested
+        export PATH="/mingw64/bin:$PATH"
+        pip3 install --upgrade pip
+        pip3 install pyyaml
+
+    - name: Initialize submodules
+      shell: msys2 {0}
+      run: |
+        git submodule update --init --recursive
+        git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        git describe
+
+    - name: Build (make) in MSYS2 MinGW64 environment
+      shell: msys2 {0}
+      run: |
+        set -e
+        cd crawl-ref/source
+        export PATH="/mingw64/bin:$PATH"
+
+        echo "Building with jobs=${{ github.event.inputs.jobs }}, tiles=${{ github.event.inputs.tiles }}"
+
+        if [ "${{ github.event.inputs.tiles }}" = "y" ] || [ "${{ github.event.inputs.tiles }}" = "Y" ]; then
+          make package-windows-tiles -j${{ github.event.inputs.jobs }} TILES=y
+        else
+          make -j${{ github.event.inputs.jobs }}
+        fi
+
+    - name: Collect build artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-msys2-build-${{ github.run_id }}
+        path: crawl-ref/source/stone_soup-latest-tiles-win32.zip
+        retention-days: 7
