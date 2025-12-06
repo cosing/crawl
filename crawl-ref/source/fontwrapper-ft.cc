@@ -572,6 +572,71 @@ static int _find_newline(const char *s)
     return nl ? nl-s : INT_MAX;
 }
 
+static void replace_bytes_in_formatted_string(formatted_string &fs,
+                                              size_t pos,
+                                              size_t old_len,
+                                              const std::string &repl)
+{
+    size_t i = 0;
+    size_t accum = 0;
+    // iterate through ops
+    while (i < fs.ops.size() && old_len > 0)
+    {
+        auto &op = fs.ops[i];
+        if (op.type != FSOP_TEXT)
+        {
+            ++i;
+            continue;
+        }
+        size_t op_len = op.text.size();
+        if (pos >= accum + op_len)
+        {
+            accum += op_len;
+            ++i;
+            continue;
+        }
+
+        // we are inside this op at local_pos
+        size_t local_pos = pos - accum;
+        // number of bytes we will remove from this op
+        size_t remove_here = std::min(old_len, op_len - local_pos);
+
+        // perform replacement in this op
+        std::string new_text;
+        new_text.reserve(op_len - remove_here + repl.size());
+        new_text.append(op.text.data(), local_pos);
+        if (!repl.empty())
+            new_text.append(repl);
+        // append remaining bytes after removed segment
+        if (local_pos + remove_here < op_len)
+            new_text.append(op.text.data() + local_pos + remove_here,
+                            op_len - (local_pos + remove_here));
+        op.text.swap(new_text);
+
+        // adjust counters
+        old_len -= remove_here;
+        // pos doesn't change (we removed at the original pos)
+        // accum increases by new op length (we'll recompute accum below)
+        // if we've consumed the whole op (local_pos == 0 && remove_here == op_len)
+        // then op.text now empty; that's fine.
+        // Move to next op only after updating accum.
+        // Recompute accum up to current op (we can compute from start each time,
+        // but we can update incrementally for efficiency).
+        // For simplicity, recompute accum up to i (could be optimized).
+        accum = 0;
+        for (size_t j = 0; j <= i; ++j)
+            if (fs.ops[j].type == FSOP_TEXT)
+                accum += fs.ops[j].text.size();
+            else
+                ; // non-text ops don't contribute to byte offsets
+        ++i;
+    }
+
+    // If there are still bytes to remove but we've run out of text ops,
+    // that's an anomalous case; ignore (shouldn't normally happen).
+}
+
+// The modified split function:
 formatted_string FTFontWrapper::split(const formatted_string &str,
                                       unsigned int max_str_width,
                                       unsigned int max_str_height)
@@ -585,9 +650,12 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
     formatted_string ret;
     ret += str;
 
+    // base is a mutable byte buffer used by this algorithm
     string base = str.tostring();
     int num_lines = 0;
 
+    // We will operate using a pointer 'line' into base; when we mutate base
+    // we must recompute pointers from base.data().
     char *line = &base[0];
     while (true)
     {
@@ -602,13 +670,18 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
         else
         {
             space_idx = -1;
+            // search backwards for a breakable glyph: ASCII space OR U+200B
             for (char *search = &line[line_end];
                  search > line;
                  search = prev_glyph(search, line))
             {
-                if (*search == ' ')
+                char32_t cc;
+                int clen = utf8towc(&cc, search);
+                if (clen <= 0)
+                    continue;
+                if (cc == ' ' || cc == 0x200B)
                 {
-                    space_idx = search - line;
+                    space_idx = static_cast<int>(search - line);
                     break;
                 }
             }
@@ -616,6 +689,7 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
 
         if (++num_lines >= max_lines || space_idx == -1)
         {
+            // ellipsize path (mostly unchanged)
             line_end = min(line_end, nl);
             int ellipses;
             if (space_idx != -1 && space_idx - line_end > 2)
@@ -630,17 +704,61 @@ formatted_string FTFontWrapper::split(const formatted_string &str,
                 }
             }
 
-            ret = ret.chop_bytes(&line[ellipses] - &base[0]);
+            // compute absolute byte offset for chopping
+            size_t chop_at = static_cast<size_t>(&line[ellipses] - &base[0]);
+            ret = ret.chop_bytes(chop_at);
             ret += "..";
             return ret;
         }
         else if (space_idx != nl)
         {
-            line[space_idx] = '\n';
-            ret[&line[space_idx] - &base[0]] = '\n';
+            // We found a break candidate inside the current line that is not an
+            // explicit newline. It may be ASCII space (1 byte) or a multi-byte
+            // sequence such as U+200B. We must replace the entire codepoint
+            // bytes [pos, pos+clen) with a single '\n' byte in both base and ret.
+
+            size_t abs_pos = static_cast<size_t>(&line[space_idx] - &base[0]);
+            char32_t cc;
+            int clen = utf8towc(&cc, &line[space_idx]);
+            if (clen <= 0)
+            {
+                // Fallback: behave as ASCII space replacement on the first byte
+                line[space_idx] = '\n';
+                ret[abs_pos] = '\n';
+            }
+            else if (clen == 1 || cc == ' ')
+            {
+                // ASCII space: same as original behavior
+                line[space_idx] = '\n';
+                ret[abs_pos] = '\n';
+            }
+            else
+            {
+                // multi-byte codepoint (e.g. U+200B)
+                // replace the multi-byte sequence in base with single '\n'
+                base.replace(abs_pos, static_cast<size_t>(clen), 1, '\n');
+                // in ret (formatted_string) replace the corresponding bytes:
+                // remove (clen - 1) bytes starting at abs_pos+1, and set byte at abs_pos to '\n'.
+                // We'll implement this by replacing [abs_pos, abs_pos+clen) with "\n"
+                replace_bytes_in_formatted_string(ret, abs_pos, static_cast<size_t>(clen), std::string("\n"));
+
+                // After modifying base, recompute the current line pointer:
+                line = &base[abs_pos]; // points to the '\n' we just inserted
+            }
         }
 
-        line = &line[space_idx+1];
+        // Advance line pointer to the next segment (after the newline we created)
+        // Note: if we replaced a multi-byte codepoint, line now points at '\n',
+        // so next start should be after it.
+        // Find the new pointer using the updated base buffer.
+        // Compute the offset of the start of this line in the possibly-modified base.
+        // We can find the start by subtracting previous offset: line was &base[0]+old_offset.
+        // Simpler: locate the next newline position starting at current line pointer.
+        // But original code uses line = &line[space_idx+1]; we'll recompute using abs_pos.
+        size_t new_start_pos = static_cast<size_t>(&line[space_idx] - &base[0]) + 1;
+        if (new_start_pos >= base.size())
+            break;
+        line = &base[new_start_pos];
     }
 
     return ret;
