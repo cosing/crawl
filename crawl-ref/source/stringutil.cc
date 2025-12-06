@@ -182,7 +182,8 @@ string wordwrap_line(string &s, int width, bool tags, bool indent, int force_ind
     while (int clen = utf8towc(&c, cp))
     {
         int cw = wcwidth(c);
-        if (c == ' ')
+        // Treat ASCII space or ZERO WIDTH SPACE (U+200B) as potential breakpoints.
+        if (c == ' ' || c == 0x200B)
         {
             if (seen_nonspace)
                 space = cp;
@@ -248,9 +249,20 @@ string wordwrap_line(string &s, int width, bool tags, bool indent, int force_ind
                                     : _get_indent(s))
                                 : "";
 
-    // eat all trailing spaces and up to one newline
-    while (*cp == ' ')
-        cp++;
+    // eat all trailing ASCII spaces and ZERO WIDTH SPACES and up to one newline
+    while (true)
+    {
+        if (!*cp)
+            break;
+        char32_t cc;
+        int clen = utf8towc(&cc, cp);
+        if (clen <= 0)
+            break;
+        if (cc == ' ' || cc == 0x200B)
+            cp += clen;
+        else
+            break;
+    }
     if (*cp == '\n')
         cp++;
 
