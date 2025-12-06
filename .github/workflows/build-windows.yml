@@ -1,0 +1,47 @@
+name: Manual Windows Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      configuration:
+        description: 'Build configuration (Release or Debug)'
+        required: false
+        default: 'Release'
+      arch:
+        description: 'Target architecture (x64 or x86)'
+        required: false
+        default: 'x64'
+
+jobs:
+  build:
+    name: Build on Windows
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Configure (CMake)
+      shell: bash
+      run: |
+        echo "Configuring with CMake (Generator: Visual Studio 17 2022, Arch: ${{ github.event.inputs.arch }})"
+        mkdir -p build
+        cd build
+        cmake -G "Visual Studio 17 2022" -A "${{ github.event.inputs.arch }}" -DCMAKE_BUILD_TYPE="${{ github.event.inputs.configuration }}" ..
+
+    - name: Build
+      shell: bash
+      run: |
+        echo "Building (config: ${{ github.event.inputs.configuration }})"
+        cmake --build build --config "${{ github.event.inputs.configuration }}" --parallel 2
+
+    - name: Upload build artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-build-${{ github.run_id }}
+        path: build
+        retention-days: 7
