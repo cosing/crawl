@@ -7,9 +7,37 @@ Spit Poison ability
 
 向一个目标生物喷吐毒液。
 %%%%
-Breathe Dispelling Energy ability
+Combustion Breath ability
 
-向一个目标生物喷吐一股驱散能量，有可能会移除它身上被施加的魔法。
+呼出一道挥发性的余烬冲击，这些余烬会在它们接触到的每个生物周围猛烈爆炸。它对使用者无害。
+%%%%
+Glacial Breath ability
+
+呼出一股强大的霜冻波，将它杀死的任何物体都包裹在一个坚固耐用的冰块中。
+%%%%
+Nullifying Breath ability
+
+呼出一大股纯净的反魔法冲击，消除它击中所有生物的魔法效果，并在一段时间内显著干扰它们的施法能力。它对使用者无害。
+%%%%
+Steam Breath ability
+
+呼出一股强大的蒸汽冲击，烫伤目标并留下遮蔽视线的蒸汽云。
+%%%%
+Galvanic Breath ability
+
+呼出一股带电的电流爆发，电流将穿过一个目标以及所有与其相连的其他生物。
+%%%%
+Mud Breath ability
+
+吐出一个巨大的泥球，击退它击中的任何物体，并浸湿周围区域，形成泥泞的滑道，阻碍敌人的移动并导致它们有时会失手进行攻击。
+%%%%
+Caustic Breath ability
+
+呼出一道浓缩的酸液喷雾，会在其经过的任何空置格位上留下腐蚀性云雾，并腐蚀它击中的任何目标。
+%%%%
+Noxious Breath ability
+
+呼出一道有毒蒸汽，可以使任何身处其中且不抗毒的生物感到混乱。在较高等级下，云雾可以覆盖更大的区域并持续更久。
 %%%%
 Breathe Fire ability
 
@@ -25,30 +53,13 @@ Breathe Fire ability
     return desc
 }}
 %%%%
-Breathe Frost ability
-
-<Chilling Breath spell>
-%%%%
 Breathe Poison Gas ability
 
 向一个目标生物喷吐一股毒气。
 %%%%
-Breathe Lightning ability
+Invent Gizmo ability
 
-释放大量电流，造成无法控制的闪电风暴。防具无法完全抵御它。
-%%%%
-Breathe Acid ability
-
-向附近的一个生物吐出一团酸液，使其被腐蚀性粘液覆盖一小段时间。
-它也有可能溅射到目标附近的其他生物。
-%%%%
-Breathe Steam ability
-
-向目标地喷吐出一团蒸汽，任何被击中的生物会被烫伤，同时它也会模糊视线。
-%%%%
-Breathe Noxious Fumes ability
-
-向一个目标生物喷吐一股毒烟。
+运用您无与伦比的齿轮精独创性来发明和组装一个独一无二的设备，并将其永久安装在您自己身上。这种灵感不会再次出现，所以请明智地选择。
 %%%%
 Hurl Damnation ability
 
@@ -105,7 +116,54 @@ Begin Untransformation ability
 
 开始将你变回你的原生形态。这需要花一小段时间来集中精力。
 %%%%
-# 辛
+Imbue Servitor ability
+
+选择施法者拥有的一个毁灭性法术，授予未来创建的咒火侍从（Spellspark Servitors），替换之前授予它们的任何法术。施法者必须能够自行施放该法术，且失败率不超过 20%。
+
+注：以这种方式赋予法术将花费数个回合，并且如果您的侍从处于激活状态，它将被遣散。
+%%%%
+Imprint Weapon ability
+
+分析您物品栏中一件神器近战武器的结构组成，并将其铭刻到您的白金典范（Platinum Paragon）法术上，让您在创造白金典范时，能让它挥舞这件武器的一个功能性复制品。
+%%%%
+Cacophony ability
+
+完全显现您的骚灵本质，让您附身的全部盔甲飞出，在短时间内独立进行攻击
+靴子、围巾和头盔从四面八方袭击您的敌人，空气中充满欢乐的喧嚣。
+
+这些物品仍然与您相连，不能被引导到太远的距离，但您不会分担它们受到的任何伤害，并且可以自由地穿过它们进行射击。
+
+它们的攻击可能会给您的敌人造成各种轻微的负面状态——有时会使其眩晕、汲取或甚至混乱。
+
+使用此能力后，您必须获得足够经验值才能再次使用它。
+%%%%
+Bat Swarm ability
+
+将您的实体形态分散成一群吸血蝙蝠，使您的装备融入其中。让您能够快速且躲避地移动。从您体内散发出的蝙蝠数量如此巨大，以至于它们甚至像一团令人窒息的云雾一样充满附近的空格，袭击敌人并逐渐使它们入睡。
+
+使用此能力后，您必须获得足够经验值才能再次使用它。
+%%%%
+Enkindle ability
+
+将您的骚灵火焰煽动到狂热的程度，以燃烧掉所有累积的记忆为代价，极大地增强您的施法能力。
+
+在此状态下，您的伤害性法术不消耗魔法值（MP），不受负重影响，并且它们的施法成功率和威力都会获得加成（后者随您的经验等级提高而增加）。在“燃火”状态下进行的任何法术爪击都会造成与所施放法术等级成比例的额外伤害，并为您恢复所造成伤害一定百分比的生命值。
+
+您在“燃火”状态下施放的每个法术都会消耗一个记忆，一旦您没有剩余的记忆（或无论如何，在短时间后），该状态就会结束。
+
+以您当前的经验等级，您可以储存足够的记忆，通过这种方式连续施放最多 {{return 3 + math.floor(you.xl() * 3 / 20);}} 个法术。
+%%%%
+Breathe Rust ability
+
+呼出一道氧化蒸汽，持续腐蚀和削弱身处其中的生物的攻击力。
+这些锈蚀云雾可以持续很长时间，但只会造成极小的伤害。
+%%%%
+Golden Breath ability
+
+呼出一股强大的元素毁灭冲击，造成火焰和寒冷双重伤害，
+并在其身后留下毒性蒸汽云。
+%%%%
+# Zin
 Recite ability
 
 在短暂的期间内，向附近的怪物传道辛的律令。
@@ -136,6 +194,7 @@ Cure All Mutations ability
 
 治愈你体内所有变异。仅能使用一次。
 %%%%
+# The Shining One
 # 光明神
 Divine Shield ability
 
@@ -164,10 +223,9 @@ Unearth Wretches ability
 将那些濒死的生物从奇库巴库哈的墓地带出，为各种死灵法术提供充足的食材。
 它们的数量和质量随死灵术技能的提升而提升。
 %%%%
-Torment ability
+Sign of Ruin ability
 
-呼唤死者，使视线中的所有生物都经历那些所有可怜的灵魂一生所遭受的痛楚。
-但永远不会直接杀死目标。奇库巴库哈将永远保护你至少免受其中一部分效果。
+[[Sign of Ruin spell]]
 %%%%
 Brand Weapon With Pain ability
 
@@ -179,19 +237,24 @@ Receive Forbidden Knowledge ability
 赐予你最强大、最邪恶的死灵法术：作祟、博格尼尔的再生、侵扰和死亡之门。
 你必须在这个礼物和痛楚武器印记之间二选一，而且任何一个礼物只能收到一次。
 %%%%
-# 伊莱德莱姆努尔
+# Yredelemnul
 Recall Undead Harvest ability
 
 立即将地牢中所有隶属于你的亡灵随从召唤到你的身边。
 %%%%
-Dark Bargain ability
+Light the Black Torch ability
 
-将你收割的灵魂献给伊莱德莱姆努尔，以换取亡灵仆从的临时帮助。
-仆从的力量随祈祷技能的提升而增加。
+高举黑火炬（Black Torch），并恳请耶瑞得勒姆努（Yredelemnul）将其点燃，标志着您尝试征服当前地下城层级的开始。耶瑞得勒姆努只会为火炬点燃期间的击杀授予虔诚。
+
+那些赢得了耶瑞得勒姆努部分青睐的人将获赠临时的亡灵仆从，以帮助他们开始征服；经验丰富且特别虔诚的人会获得更强大的仆从。
+
+耶瑞得勒姆努不提供第二次机会——当您离开当前楼层时，火炬就会熄灭，并且每个楼层只能点燃一次，永远如此。
 %%%%
-Drain Life ability
+Hurl Torchlight ability
 
-[[Drain Life spell]] 汲取的生命会随祈祷技能的提升而增加。
+从黑火炬中投掷出一团阴影之火，对活物、恶魔和神圣生物造成不可抵抗的伤害。火炬之光也会短暂地强化任何被爆炸波及的您的亡灵仆从，并且对使用者无害。伤害会随着祷告（Invocations）技能的提高而增加。
+
+此能力只能在火炬点燃时使用，并且每层楼只能使用有限的次数。每层楼可使用的次数随虔诚度增加，并且通过杀死一个独特的命名敌人，用特别显著的灵魂来煽动黑火炬的火焰，也会额外提供一次使用次数。
 %%%%
 Bind Soul ability
 
@@ -204,7 +267,13 @@ Bind Soul ability
 
 缚魂将跟随它的捕获者穿过楼梯，并能在从其他楼层召回。一次只能束缚住一个灵魂。
 %%%%
-# 奥卡瓦鲁
+Fathomless Shackles ability
+
+将使用者周围的环境笼罩在耶瑞得勒姆努（Yredelemnul）不可阻挡的控制之中。只要您留在这个亵渎的圣所内，所有与您共处其中的敌对生物都将被束缚在原地，它们的生命力将被持续汲取以恢复您自身。与盟友隔离的受害者将以大大增加的速度受到伤害。
+
+受影响的区域会随着时间缩小，并且在旧区域完全消失之前，不能创建新的区域。
+%%%%
+# Okawaru
 Heroism ability
 
 暂时强化你的所有战斗技能，包括进攻和防御能力。
@@ -228,6 +297,79 @@ Receive Armour ability
 
 从四件防具中选取其中一件。这个福泽只能承蒙一次。
 %%%%
+# Makhleb
+Unleash Destruction ability
+
+释放一道地狱般的 {{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "穿刺火焰、熔岩（来自 Gehenna 的影响）、闪电或负能量"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "穿刺寒冰（来自 Cocytus 的影响）、寒冷、闪电或负能量"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "穿刺火焰、寒冷、毁灭（来自 Tartarus 的影响）或负能量"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "穿刺火焰、寒冷、闪电、酸液或金属碎片（后两者来自 Dis 的影响）"
+    else
+        return "火焰、寒冷、闪电或负能量"
+    end
+}} 冲击，射向一个目标生物。伤害和准确率会随着祷告技能的提高而增加。
+%%%%
+Infernal Servant ability
+
+从遥远的地狱召唤一个恶魔，并用您的血液将其束缚为奴。在低祷告（Invocations）技能下，只能召唤出低阶恶魔，但拥有高祷告技能的人可以召来主要恶魔乃至处决者。
+
+请注意，混沌军团容易内讧，有时在您召唤仆从的同时，一个敌对的恶魔也会响应仪式。
+%%%%
+Brand Self ability
+
+永久性地在您自身上刻下地狱印记（Infernal Mark），永远地玷污您的身体和灵魂，为毁灭者（the Destroyer）服务。
+
+只要您继续崇拜马赫勒布（Makhleb），这个印记将赋予您以下力量：
+%%%%
+Infernal Legion ability
+
+以自己的身体为导管，向世界释放一支混沌大军。在短时间内，较弱的恶魔将持续在使用者附近显现——前提是周围有可供它们战斗的目标。虽然这些恶魔个体可能生命短暂，但混沌军团作为一个整体几乎是取之不尽的。
+%%%%
+Globe of Annihilation ability
+
+发射一个翻腾的、充满强大毁灭性力量的球体，这些力量来源于 {{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "Gehenna 无尽的火焰。"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "Cocytus 冰冷的荒原。"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "Tartarus 恸哭的悲伤。"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "Dis 无情的恶意。"
+    else
+        return "地狱本身。"
+    end
+}}
+
+这个球体在行进过程中积聚力量，并将试图追踪指定的目标，尽管它移动和转向时具有相当大的惯性。当它与一个生物或其他障碍物碰撞时，会以一场猛烈的 {{
+    if you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "火焰或熔岩"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "寒冷或寒冰"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "负能量或毁灭"
+    elseif you.get_base_mutation_level("Dis destruction") == 1 then
+        return "酸液或金属碎片"
+    else
+        return "地狱能量"
+    end
+}} 爆炸开来，爆炸半径取决于行进距离。
+
+您本人不会受到这次爆炸的伤害。
+%%%%
+Vessel of Slaughter ability
+
+与毁灭者（the Destroyer）订立血之契约，以危险的代价暂时赋予您巨大的力量。
+
+在契约缔结的那一刻，一股巨大的毁灭性爆炸将围绕着您爆发，您将变身为恶魔化身，获得恶魔抗性、不可动摇的意志、击杀回血翻倍，并使您受到的所有伤害减少三分之一。此外，您受到的所有对外伤害将获得一个加成，加成大小与您使用此能力时所受的伤害程度成正比。
+
+当您的变身效果结束后，您将被拖入血肉熔炉（Crucible of Flesh），被迫与一波又一波的恶魔战斗，直到马赫勒布（Makhleb）认为您的债务已偿清为止。
+%%%%
 # Sif Muna
 %%%%
 Channel Magic ability
@@ -244,7 +386,7 @@ Divine Exegesis ability
 你会获得基于你的祈祷技能的法力的加成，
 比同等训练水平下的相关法术技能要高出50％。
 %%%%
-# 特洛戈
+# Trog
 Berserk ability
 
 使用者进入狂暴状态。进入狂暴状态后，会暂时提升生命值、速度以及近战攻击力。
@@ -262,6 +404,7 @@ Brothers in Arms ability
 
 召唤庞大而愤怒的友军进行破坏。
 %%%%
+# Elyvilon
 # 艾利维隆
 Purification ability
 
@@ -290,7 +433,7 @@ Divine Vigour ability
 根据祈祷技能，极大地提高你的最大生命和魔力值。
 你当前的生命和魔力值也会成比例增加。
 %%%%
-# 卢格努
+# Lugonu
 Depart the Abyss ability
 
 离开深渊，回到你原来所在的地方。
@@ -316,7 +459,7 @@ Brand Weapon With Distortion ability
 用局部扭曲场永久腐化你所选择的一件武器。
 这个祝福只能使用一次，且不可用于神器。
 %%%%
-# 尼姆雷斯・索布
+# Nemelex Xobeh
 Draw ability
 
 从能力牌组中抽取一张牌。
@@ -335,24 +478,36 @@ Stack Five ability
 随后，你可以按照你所选的次序抽取这些牌。
 重新使用这个能力将丢弃当前的牌堆。
 %%%%
-# 比欧弗
+# Beogh
 Smiting ability
 
 [[Smiting spell]] 惩戒的强度随祈祷技能的提升而增强。
-%%%%
-Recall Orcish Followers ability
 
-立即将地牢中所有隶属于你的兽人随从召唤到你的身边。
+在神圣审判期间，贝欧格（Beogh）不会允许您直接对另一位使徒使用此能力。
 %%%%
-Stop Recall ability
+Recall Apostles ability
 
-停止召回你的随从。
+将您的使徒从地下城中的任何地方召回至您的周围。
 %%%%
-Resurrection ability
+Dismiss Apostle ability
 
-使一具兽人尸体复活。这个兽人将会是盟友，即使他在死亡前还不是盟友。
+将这位使徒从您的服侍中解放出来，以贝欧格（Beogh）的名义让他们去世界上行善。
 %%%%
-# 费德哈
+Recruit Apostle ability
+
+为一名被击败的使徒涂油，并欢迎他们成为永久追随者。他们将跟随您穿越楼层，进入任何危险，并愿意为事业和他们的同族献出生命。
+
+如果他们死亡，在您获得足够的虔诚后，贝欧格（Beogh）最终会复活他们——通过击杀所有可能导致使徒死亡的敌人，这个过程可以大大加快。
+
+您同时最多可以拥有 3 名追随者陪伴，但您可以自由遣散旧的追随者来邀请新的。
+%%%%
+Blood for Blood ability
+
+恳求贝欧格（Beogh）赐予您一支军队，以进行血腥的报复。使用者将立即被兽人盟友包围，随着时间的推移，会有更多的兽人从四面八方赶来。这个祈祷会持续相当长的时间，但一旦视野中没有更多的敌人，它就会更快地失效。
+
+仅当您站在您的一位使徒的尸体上时才能使用，且每次死亡最多只能使用一次。
+%%%%
+# Fedhas
 Wall of Briars ability
 
 在你周围长出短暂存活的荆棘丛。攻击这些荆棘的怪物将被锋利的刺伤害。
@@ -378,6 +533,7 @@ Grow Oklob ability
 
 提升祈祷技能可提高酸箭草的生命值和存在时间，以及其喷吐酸液的频率。
 %%%%
+# Cheibriados
 # 切布理亚多
 Bend Time ability
 
@@ -398,7 +554,7 @@ Step From Time ability
 过一段时间后，你将回到与离开时的相同的状态。
 提升祈祷技能可以增加你离去的时间。
 %%%%
-# 吉瓦
+# Jiyva
 Slimify ability
 
 在你的武器或拳头上裹上黏液，
@@ -409,6 +565,7 @@ Oozemancy ability
 从你周围的地牢墙壁中召唤出酸性软泥，对敌人造成伤害，
 伤害取决于与其相邻的黏性墙壁的数量。
 %%%%
+# Ashenzari
 # 艾申扎利
 Curse Item ability
 
@@ -419,7 +576,34 @@ Shatter The Chains ability
 
 摧毁一个选定的诅咒装备，解除佩戴者的诅咒。
 %%%%
-# 哥萨戈
+# Dithmenos
+Shadowslip ability
+
+瞬间与你的影子互换位置（只要影子处于活跃状态），并迷惑所有视野内的敌人，使他们无法分辨谁是你谁是影子。
+原本锁定你的敌人将转而完全专注于攻击你的影子数回合，直到他们意识到错误，若敌人成功摧毁你的影子，幻象将提前终止。
+
+此效果的持续时间随召唤术技能提升而延长，且使用后影子的耐久度也会增强。
+%%%%
+Aphotic Marionette ability
+
+抓住另一个生物的阴影，并迅速地释放他们的法术和能力。
+如同它们是您自己的法术和能力一样，目标为随机敌人。
+它们以这种方式召唤出的生物将归您所有，并且它们原本会施加给自身的大多数增益效果将转而施加给您。
+您也完全不会受到它们可能造成的任何伤害。
+
+此能力只能用于当前能够有效施放合格法术的生物。
+这个过程也会让受害者的阴影变得过于黯淡而无法第二次被抓住——一旦成功对目标使用，就不能再次对它们使用。
+
+（并非所有法术都能通过这种方法施放；那些不能施放的法术在检查时会用感叹号标记。）
+%%%%
+Primordial Nightfall ability
+唤起群星初燃之前的黑夜，将您周围的环境笼罩在无法穿透的黑暗之中。使用者的视野范围将缩减为零，阻止敌人追踪您或对您瞄准能力，并在效果持续时间内缓慢恢复正常。您的潜行能力也会得到提高。
+
+它必须等到效果完全结束后才能再次被唤起，因为即便是创世的第一个夜晚也终将让位于白昼。
+
+祷告（Invocations）技能会增加效果的持续时间。
+%%%%
+# Gozag
 Potion Petition ability
 
 向哥萨戈祈求给你出售一批药水的效用。哥萨戈会一次给出三张清单，其价格不一。
@@ -437,7 +621,7 @@ Bribe Branch ability
 接受贿赂的敌人会降低剩余的贿赂资金；
 当其耗尽时，如果贿赂的敌人没能成为盟友，他们将变得冷漠。
 %%%%
-# 卡兹拉尔
+# Qazlal
 Upheaval ability
 
 呼唤自然力量，用岩浆、冰、风或碎石轰击一小片区域。
@@ -452,7 +636,7 @@ Disaster Area ability
 
 用强大的自然力量轰炸你周围整片区域。提升祈祷技能会增加伤害和受影响的范围。
 %%%%
-# 入
+# Ru
 Draw Out Power ability
 
 发掘你的潜力，恢复健康和魔力，并使你的身心从外部约束中解放出来，
@@ -561,7 +745,7 @@ Reject Sacrifices ability
 每个连续的拒绝都会显著增加舍弃的计时。
 接受舍弃会将计时重置到标准长度。
 %%%%
-# 乌斯卡亚
+# Uskayaw
 Stomp ability
 
 随着舞蹈的节奏及时跺地，向所有相邻生物发出冲击波。
@@ -698,3 +882,29 @@ Evoke the Staff of Olgreb ability
 
 使施法者散发出剧毒能量，在光环存在的时间内，就会对视线内的一切持续进行毒害。
 该能力的强度与激活技能成正比，并且该能力仅在使用奥格雷布的法杖时可用。
+%%%%
+Jump ability
+
+在眨眼之间跃入空中。
+虽然无法控制您的落点，但这种移动非常突然和敏捷，
+以至于在您能再次行动之前，怪物将无法对您进行攻击，
+许多怪物甚至可能完全失去您的位置。
+
+每次使用此能力后，您必须花费短暂时间进行恢复。
+%%%%
+Watery Grave ability
+
+将您附近所有的水变成汹涌的潮汐，试图淹没站在其中或其上方的每一个敌人。
+那些需要空气呼吸的生物也会变得“水浸”，
+使其在数个回合内无法施放受寂静影响的法术。
+
+使用此能力后，您必须获得足够经验值才能再次使用它。
+%%%%
+Bestial Takedown ability
+
+释放您捕食者本能的全部力量，
+跳向一个受惊的敌人并对其实施一次恶毒的近战攻击。
+这次攻击会根据您的变形术技能获得伤害乘数。
+如果这次攻击杀死了它们，您随后总是会进行一次嚎叫。
+
+只能以受惊的敌人为目标，且该敌人周围至少有一个可占据的相邻格位。

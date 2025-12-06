@@ -1,5 +1,5 @@
 %%%%
-# 逃脱
+# Escape
 Velocity card
 
 这张牌上描绘着一双破旧、空着的靴子。靴底沾着沙子、灰和草皮。
@@ -42,7 +42,7 @@ the Cloud card
 抽出此牌，使用者的的敌人会被笼罩在一圈云层中。
 云层的持续时间将随着卡牌能力的提高而延长。
 %%%%
-# 破坏
+# Destruction
 Vitriol card
 
 这张牌上描绘着酸箭草，它正在滴着独特的腐蚀性汁液。
@@ -118,7 +118,7 @@ the Illusion card
 
 抽出此牌将召唤出使用者的幻象。它的力量取决于你自己。
 %%%%
-# 惩罚
+# Punishment
 Wrath card
 
 这张牌上描绘着神之手，从天堂垂下来，投射出猛烈的闪电。
@@ -143,7 +143,7 @@ Torment card
 
 抽出此牌会让使用者承受痛苦的伤害。
 %%%%
-# 臭虫牌
+# buggy cards
 a buggy card
 
 这张牌上描绘着一个Crawl玩家在向Mantis提交错误报告。

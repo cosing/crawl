@@ -463,6 +463,8 @@ tutorial4 spellcasting
 或<input>点击</input>法术贴图进行施法</localtiles>。
 按<input>$cmd[CMD_CAST_SPELL]?</input>获得你的法术列表。
 魔法如同弹药，会显示在弹药槽，
+%%%%
+tutorial4 spellquivering
 你可以用<input>$cmd[CMD_QUIVER_ITEM]</input>查看预备的法术。
 使用<input>$cmd[CMD_FIRE]</input>或<input>shift-tab</input>投射当前预备的法术。
 

@@ -121,6 +121,10 @@ CMD_SHOW_CHARACTER_DUMP verbose
 
 丢弃角色的进度
 %%%%
+CMD_CHARACTER_DUMP
+
+保存角色的进度
+%%%%
 CMD_CHARACTER_DUMP verbose
 
 将角色的详细信息丢入到morgue目录中的文件“ 玩家名.txt”，
@@ -366,7 +370,7 @@ CMD_TOGGLE_KEYBOARD
 
 切换键盘
 %%%%
-CMD_SHOW_KEYBOARD verbose
+CMD_TOGGLE_KEYBOARD verbose
 
 切换屏幕键盘的可见性。
 %%%%

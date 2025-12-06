@@ -1,4 +1,5 @@
 %%%%
+# ------ Generic minor stat/AC muts -----
 # ------ 通用、小型的属性/防护方面的变异 -----
 tough skin mutation
 
@@ -101,8 +102,20 @@ low mp mutation
 camouflage mutation
 
 你的皮肤会根据周围环境而变色。这个变异每升一级会提升潜行。
+
 %%%%
-# ------ 生长 -----
+passive freeze mutation
+
+近战攻击你的敌人会被冻结，并受到伤害。
+如果敌人造成了任何伤害，这个效果就必会触发。
+%%%%
+time-warped blood mutation
+
+您的血液已与时间流脱节。每当您的生命值（HP）降至最大值的 50% 以下时，
+您血液的喷洒会在您的周围产生奇特的波动，为您视野内最强的两名盟友施加加速（hasting），
+加速等级相当于此突变的等级。完成此操作后，在您的生命值完全恢复之前，您的血液将无法进一步扩张时间。
+%%%%
+# ------ Auxes -----
 horns mutation
 
 你的头上长出角，在近战时会尝试顶伤敌人，但无法戴头盔。这个变异每升一级，
@@ -276,6 +289,7 @@ MP-powered wands mutation
 你的魔杖会汲取你的魔力，在这个过程中会变得更强大。
 如果你没有魔力了，你的魔杖的效果会恢复正常。
 %%%%
+# ------ Goodmut/badmut pairs -----
 # ------ 有对应效果的好变异/坏变异 -----
 regeneration mutation
 
@@ -321,6 +335,7 @@ subdued magic mutation
 你的法术将略易施放（减少了失误率和判定的严苛程度），但威力会变弱。
 这个变异每升一级，两方面的效果都会增强。
 %%%%
+# ------ Badmuts without matching goodmuts -----
 # ------ 只有坏变异，没有对应的好变异 -----
 teleportitis mutation
 
@@ -342,6 +357,10 @@ deterioration mutation
 
 当受伤时，有时你的身体会恶化，暂时降低你的属性。
 这个变异达到第二级，这种情况会发生得更频繁。
+%%%%
+berserk mutation
+
+当近战攻击敌人时，有时你会狂暴。这个变异每升一级，你就更容易狂暴。
 %%%%
 no potion heal mutation
 
@@ -368,11 +387,6 @@ foul stench mutation
 敌人的近战攻击有时会让你发出一团恶臭的瘴气，
 卷入其中的怪物会变慢并受到严重毒害。
 这个变异还能让你对（任何来源的）瘴气免疫。
-%%%%
-passive freeze mutation
-
-近战攻击你的敌人会被冻结，并受到伤害。
-如果敌人造成了任何伤害，这个效果就必会触发。
 %%%%
 spiny mutation
 
@@ -625,6 +639,7 @@ strong nose mutation
 当你探索地牢时，附近的那些无法直接看到的物品，
 如果它没有被探索过，其位置会标出标记。
 %%%%
+# ------ Jiyva muts ------
 # ------ 吉瓦的变异 ------
 gelatinous body mutation
 
@@ -653,6 +668,11 @@ jelly sensing items mutation
 jelly absorbing missiles mutation
 
 当你被飞弹击中时（比如箭或弩箭），你身上的胶冻可能会吞掉它，并进行一定治疗。
+%%%%
+engulf mutation
+
+你在近战时可能会吞噬与你同样大小或比你更小的活物。
+那些敌人将被沉默且无法呼吸。
 %%%%
 otherworldly mutation
 
@@ -688,6 +708,242 @@ drunken brawling mutation
 
 （这包括治疗、愈伤、魔力和琼浆药水。）
 %%%%
+artefact enchanting mutation
+
+您可以使用“武器附魔卷轴”和“盔甲附魔卷轴”对随机的神器进行附魔。
+
+这不能将它们的附魔等级提高到同类型普通物品通常可能达到的最高水平之上，并且完全不能影响特别不寻常的神器。
+%%%%
+runic magic mutation
+
+您借助刻在盔甲上的符文来施放法术，极大地减少了原本所需的复杂动作。
+
+（您所穿戴的所有盔甲的负重等级在计算施法成功率时被降低 1/2。）
+%%%%
+off-hand wielding mutation
+
+如果未挥舞双手武器或佩戴盾牌或宝珠，您可以用副手挥舞一把单手武器。您将使用副手武器进行主武器攻击后的追击，攻击延迟由两者平均值决定。远程武器只能追击远程武器的攻击，近战武器同理。
+%%%%
+slow wielding mutation
+
+您在挥舞或卸下武器时必须重新校准您的抓握臂。这需要与穿戴盔甲一样长的时间。
+%%%%
+warmup strikes mutation
+
+您的抓握臂需要时间活动开，使得您在每场战斗中最初的几次攻击效果较差。缓慢、沉重的攻击比快速攻击更有帮助。基于武器的攻击和徒手攻击都会受到影响。
+%%%%
+no rings mutation
+
+您的双手被嵌入了抓握臂的控制装置中，导致您没有地方可以佩戴魔法戒指，否则会造成灾难性的魔法干扰。
+%%%%
+iron-fused scales mutation
+
+您的鳞片与一层厚厚的铁融合在一起，赋予它们类似于一套盔甲的弹性（+5 AC）。
+%%%%
+inviolate magic mutation
+
+您的魔法能够抵抗外部力量的干扰。吸取您魔法值（MP）的敌对效果仅能吸取三分之一的量，并且除了您自己以外，任何人都无法移除您的魔法效果。
+%%%%
+formless mutation
+
+您没有实体，而是通过附身物体来与世界互动。这允许您“装备”最多 6 个靴子、手套、披风或头盔，可以任意组合，但盔甲对您来说太大，无法以这种方式有效地操纵。
+
+在较高等级下，您甚至可以在短时间内将您附身的盔甲独立送出去攻击敌人。
+%%%%
+trickster mutation
+
+随着您散播不幸，您与生者领域的联系会变得更强。
+
+每当您或您的盟友对附近的敌人施加新的负面状态效果（毒素除外）时，您的盔甲等级（AC）会暂时增加。这个加成会随着受影响的不同敌人数量而提高，但如果您不继续施加新的不幸，它会随时间衰减。
+
+以您当前的经验等级（XL），您通过这种方式最多可以获得 {{return 6 + you.xl() * 4 / 5;}} 点 AC 加成。
+%%%%
+mnemnophage mutation
+
+您吞噬您所杀之物的记忆乃至其存在本身，将它们纳入环绕您身体的邪恶火焰之中。
+
+一旦您积累了足够的记忆，您可以选择将它们全部燃烧掉作为燃料，以在短时间内极大地增强您的施法能力。
+
+以您当前的经验等级，您通过这种方式最多可以储存足够的记忆来连续施放 {{return 3 + math.floor(you.xl() * 3 / 20);}} 个法术。
+%%%%
+spellclaws mutation
+
+您本能地通过爪子引导毁灭性魔法。施放伤害性法术时，您也会对攻击范围内最健康的敌人进行一次近战攻击。
+
+如果您的攻击速度慢于您的施法速度，这次攻击造成的伤害会降低。
+# ------ Fakemut descriptions ------
+%%%%
+vampire fangs mutation
+
+当您对有血液的活体怪物进行刺击（stab attack）时，您会恢复一部分总伤害量的生命值。当您的生命值低于或等于最大值的 50% 时，所有近战攻击都有机会触发此效果，触发几率随您的变形术（Shapeshifting）技能提高而增加。
+%%%%
+bloodcurse mutation
+
+当您用刺击杀死一个活体怪物时，它们可能会复活并作为您的吸血鬼奴仆为您服务。奴仆拥有它们生前拥有的所有能力，但它们是亡灵，并获得一次吸血鬼之咬攻击。施法者奴仆也将习得“吸血汲取”（Vampiric Draining）法术。
+
+您只有在没有奴仆的情况下才能创造一个奴仆，并且它们在短时间后不可避免地会化为尘土。
+%%%%
+insubstantial mutation
+
+您是虚体（insubstantial），对许多需要实体才能生效的效果免疫。您不会被束缚、石化、吞噬、倒刺穿刺、被粘性火焰覆盖，也不会被蛛网、网或流星索捕获。
+%%%%
+frigid aura mutation
+
+您的呼吸散发出强烈的寒意，在您战斗时将附近的墙壁冻结成固体。
+
+每当您攻击时，您会随机将一个与目标或您自己相邻的墙壁冻结。冰冷的墙壁每回合都会对与其相邻的任何敌人造成伤害——当一个敌人相邻的冰冷墙壁数量达到最大时，伤害会翻倍。此伤害会随着您的变形术（Shapeshifting）技能提高而增加。
+
+如果您停止攻击，墙壁会迅速融化。
+%%%%
+hive swarm mutation
+
+每当受伤导致您的生命值降至 50% 以下时，愤怒的蜜蜂会从您的身体中涌出以保护您。
+
+在您的生命值完全恢复之前，此效果不会再次发生。
+%%%%
+water reaching mutation
+
+您的身体由元素水灵活地形成，允许您从数格之外进行近战攻击——包括各种辅助攻击。
+
+除非您紧邻目标，否则执行刺击所需的精确度仍然无法实现，而且无论您在哪里进行攻击，斧头只能劈砍到紧邻您的敌人。
+%%%%
+water splatter mutation
+
+受伤时，您水状身体的一部分可能会溅出，在附近形成浅水洼。您一次性受到的伤害越多，溅出的水就越多。
+%%%%
+freeze response mutation
+
+每当您受到寒冷伤害时，您有几率陷入“冰冻”（Frozen）状态，在短时间内降低您的移动速度。
+%%%%
+steam response mutation
+
+每当您受到来自投射物的火焰伤害时，您有几率（几率随所受伤害增加）在自己周围散布蒸汽云。
+%%%%
+airstrike attack mutation
+
+每当您在近战中击中敌人时，空气会在周围扭曲并击打他们，造成额外的伤害，这个伤害会随着敌人周围的空置格位数量增加而提高。
+%%%%
+hex mastery mutation
+
+您的诅咒（Hexes）法术施放起来容易得多（降低了施法失败几率和严重性），并且敌人对您的所有效果的意志力（willpower）都会降低。
+%%%%
+riddle compulsion mutation
+
+当您遇到敌人时，您会强迫性地向他们提出谜语。时不时地，这可能会使他们困惑或恼怒，但大多数时候只是吸引了他们的注意力。
+%%%%
+werefury mutation
+
+每当您通过近战攻击杀死一个敌人时，您会获得一个临时的杀戮加成（slaying bonus），该加成随着您的变形术（Shapeshifting）技能提高而增加。
+
+该加成最高可叠加至 +12，并且只要您继续进行近战攻击，就不会过期。
+%%%%
+werehowl mutation
+
+当您在近战中杀死一个敌人时，如果您的“狼人狂怒”（werefury）加成至少为 5，您可以释放一声可怕的嚎叫，如果它能克服附近所有敌人的意志力，就会试图用恐惧将他们冻结在原地。
+%%%%
+stinger hair mutation
+
+您的毛发由长长的、可抓握的、水母般的触须构成。每当您进行近战攻击时，它们会随机向玩家 2 格范围内可见的几个敌人猛击，并试图对他们施加毒素。
+
+它们可以一次性折磨的敌人数量会随着变形术（Shapeshifting）技能提高而增加。
+%%%%
+lithotoxin mutation
+
+当您的生命值降至最大值的 60% 或更低时，您的触须会反射性地试图石化您 3 格范围内所有中毒的敌人。
+
+此效果在您完全治愈之前不会再次激活，并且其成功几率会随着您的变形术（Shapeshifting）技能提高而增加。
+%%%%
+contaminating mutation
+
+当您在近战中击中敌人时，涌动通过您的突变能量的一部分将污染他们。连续命中第三次时，这种污染将变得如此严重，以至于会扭曲他们的身体形态，造成显著的无视 AC 伤害并使其产生恶性突变（malmutating）。
+%%%%
+# ------ Makhleb destruction flavours ------
+Gehenna destruction mutation
+
+您的“释放毁灭”（Unleash Destruction）能力受到 Gehenna 的强化。您能够投掷岩浆箭而不是寒冷箭，并且您的火焰箭可以剥夺受害者的火焰抗性。
+%%%%
+Cocytus destruction mutation
+
+您的“释放毁灭”（Unleash Destruction）能力受到 Cocytus 的强化。您能够投掷寒冰箭而不是火焰箭，并且您的寒冷箭会冻结受害者，使其移动变慢。
+%%%%
+Tartarus destruction mutation
+
+您的“释放毁灭”（Unleash Destruction）能力受到 Tartarus 的强化。您能够投掷降低受害者意志力（willpower）的毁灭箭而不是闪电箭，并且您的负能量箭更强大。
+%%%%
+Dis destruction mutation
+
+您的“释放毁灭”（Unleash Destruction）能力受到 Dis 的强化。您能够投掷腐蚀性酸液箭和金属碎片箭而不是负能量箭。
+%%%%
+# ------ Makhleb marks ------
+Mark of the Tyrant mutation
+
+您的地狱仆从（Infernal Servants）持续时间更长，并且您可以在极高的祷告（Invocations）等级下召唤出更强大的仆从（代价是额外的虔诚）。当您击杀敌人时，随机一个仆从可能会获得以下之一：加速（Haste）、力量（Might）、再生（Regeneration）或聪慧（Brilliance）。
+%%%%
+Mark of Carnage mutation
+
+您的地狱仆从现在被召唤到随机敌人旁边，而不是在您附近。当它们出现时，会以您特有的毁灭力量爆发（不会伤害到您或其他盟友）。
+
+（您的仆从会释放 {{
+    if you.get_base_mutation_level("Dis destruction") == 1 then
+        return "酸液或金属碎片"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "负能量或毁灭"
+    elseif you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "火焰或熔岩"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "寒冷或寒冰"
+    end
+}} 的冲击。）
+%%%%
+Mark of the Legion mutation
+
+您的“地狱仆从”（Infernal Servant）能力被“地狱军团”（Infernal Legion）取代，允许您随着时间召唤一小支恶魔军队。虽然它们个体生命短暂，但在状态持续期间，它们的数量是取之不尽的，并且它们永远不会对您怀有敌意。
+
+您还可以通过您召唤的盟友释放马赫勒布（Makhleb）的毁灭力量，而不会伤害到它们。
+%%%%
+Mark of Annihilation mutation
+
+您的“地狱仆从”（Infernal Servant）能力被“毁灭宝珠”（Globe of Annihilation）取代，允许您投掷缓慢移动的、具有强大毁灭性力量的球体，它们会以您特有的毁灭力量发生巨大爆炸。
+
+（您的毁灭宝珠会释放 {{
+    if you.get_base_mutation_level("Dis destruction") == 1 then
+        return "酸液或金属碎片"
+    elseif you.get_base_mutation_level("Tartarus destruction") == 1 then
+        return "负能量或毁灭"
+    elseif you.get_base_mutation_level("Gehenna destruction") == 1 then
+        return "火焰或熔岩"
+    elseif you.get_base_mutation_level("Cocytus destruction") == 1 then
+        return "寒冷或寒冰"
+    end
+}} 的冲击。）
+%%%%
+Mark of Haemoclasm mutation
+
+当您击杀敌人时，他们有很小的几率在猛烈的血雨中爆炸，对相邻的敌人造成与受害者最大生命值成比例的伤害。
+
+死于这次爆炸的敌人总是会自行爆炸。
+%%%%
+Mark of the Celebrant mutation
+
+每当您的生命值（HP）降至最大值的 50% 以下时，您会进行一次地狱仪式，释放一连串针对附近敌人的血箭。您将为每个有效目标至少射出一支箭，但如果目标较少，可能会射出额外的箭。祷告（Invocations）技能会增加这些箭的伤害，并且马赫勒布（Makhleb）总是会为被这些箭杀死的敌人赐予您治疗。
+
+执行血之仪式后，在您的生命值完全恢复之前，您不能再执行下一次。
+%%%%
+Mark of Execution mutation
+
+一个恶魔化的杀戮化身沉睡在您的灵魂深处。每当您在近战中杀死一个敌人时，它有很小的几率被唤醒，并表现为您被一团刀刃般的旋风所环绕。这些刀刃会在您攻击时进行攻击，并在您成功躲避敌人攻击时进行反击。
+
+在被附身时，您有能力迅速冲向敌人，但如果您将时间花费在除了攻击以外的其他事情上，超过一小段时间，恶魔的存在就会再次在您体内休眠。
+%%%%
+Mark of Atrocity mutation
+
+您的“释放毁灭”（Unleash Destruction）能力会随着您连续不间断地使用次数越多而增强，伤害和生命值消耗都会增加。连续第四次使用时，您将自动释放一连串针对随机目标的额外箭矢，并重置此增益。
+%%%%
+Mark of the Fanatic mutation
+
+授予您“屠戮之器”（Vessel of Slaughter）能力，允许您在短时间内变身为一个强大的恶魔化身，大幅提升攻击和防御，代价是事后您将被拖入血肉熔炉（Crucible of Flesh），被迫为您的自由而战。
+%%%%
+# ------ Ru sacrifices ------
 # ------ 入要求的舍弃 ------
 inability to drink after injury mutation
 

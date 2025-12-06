@@ -401,7 +401,7 @@ Dispersal spell
 而它所影响的任何怪物都有几率被空间的扭曲所混乱，
 这个几率的判定只取决于意志力。
 %%%%
-Oblivion Howl spell
+Doom Howl spell
 
 发放出刺耳的嚎叫，在受害者的脑海中回荡。
 当那些回声还在徘徊时，噩梦般的生物会听到并追踪它们的来源。
@@ -481,6 +481,10 @@ Fire Storm spell
 这道法术能在目标区域塑造出一团威力巨大的火焰风暴，
 在造成火焰伤害的同时还会留下一些短暂存在的火旋涡。
 它造成的一半伤害，火抗无法抵御。
+%%%%
+Fire Summon spell
+
+召唤火属性的恶魔和天谴。
 %%%%
 Fireball spell
 
@@ -604,10 +608,6 @@ Haunt spell
 Heal Other spell
 
 治疗一个附近的友方。
-%%%%
-Hellfire Court spell
-
-召唤火属性的恶魔和天谴。
 %%%%
 Hunting Call spell
 
@@ -1044,6 +1044,10 @@ Sap Magic spell
 腐化目标生物施放咒语的能力。
 施法时如果被它影响会被打断，并被短暂阻止再次施法。
 %%%%
+Scattershot spell
+
+用金属碎片轰击施法者身前的锥形区域。防具可以大大削弱其造成的伤害。
+%%%%
 Scorch spell
 
 灼烧一个随机敌人。受此伤害的会在短时间内失去火抗。
@@ -1368,6 +1372,16 @@ Summon Scorpions spell
 
 召唤出一群毒蝎子。
 %%%%
+Summon Seismosaurus Egg spell
+
+召唤一颗凶猛蜥蜴的蛋，它正处于即将孵化的边缘。只要附近有敌人并且施法者保持与蛋相邻，它就会在被召唤的几回合后孵化，给召唤者的敌人造成破坏。
+
+即使是幼年体，地震龙（seismosaurus）也是一股不可忽视的力量。
+它几乎像山一样坚固，它的脚步能够制造剧烈的地震冲击波。
+每一次冲击波都会对非飞行敌人造成可观的伤害，有时甚至可能导致他们完全失去立足点。
+
+法术强度会增加蛋的耐久度和内部地震龙的力量，但不会影响孵化所需的时间。
+%%%%
 Summon Small Mammal spell
 
 召唤一只老鼠、蝙蝠或短尾矮袋鼠来协助施法者。
@@ -1444,6 +1458,11 @@ Thunderbolt spell
 
 产生一道电弧。
 %%%%
+Tomb of Doroklohe spell
+
+将施法者置于岩墙内。生成这些墙会把阻挡它们的东西推开，
+但任何生物的存在都会阻碍它们生成。它们不是永久的，会在一段时间后消失。
+%%%%
 Trog's Hand spell
 
 <Trog's Hand ability>
@@ -1459,6 +1478,11 @@ Tukima's Dance spell
 一旦目标死亡，武器很快就会落地。
 
 某些强大的有名字的神器不会被影响，任何需要激活技能的属性都不会被激活。
+%%%%
+Twisted Resurrection spell
+
+这道法术让周围的尸体爬到一起，拼凑出一个恐怖的肉块怪物。
+尸体越多、越大，创造出的怪物就越强。
 %%%%
 Upheaval spell
 
